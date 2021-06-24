@@ -12,6 +12,20 @@ function updateSliderValue () {
 }
 
 /******************************************************************************
+* Years dropdown                                                              *
+******************************************************************************/
+
+function fillYears() {
+    var nodeYearsSelect = document.getElementById("years");
+    for (var i = 1; i <= 30; i++) {
+        var newOptionNode = document.createElement("option");
+        newOptionNode.value = i;
+        newOptionNode.innerHTML = i;
+        nodeYearsSelect.appendChild(newOptionNode);
+    }
+}
+
+/******************************************************************************
 * Interest rate slider                                                        *
 ******************************************************************************/
 
@@ -34,11 +48,13 @@ function compute() {
     // Get the input values
     var principal = nodePrincipal.value;
     var rate = nodeRateSlider.value;
-    var years = nodeYears.value;
+    var years = nodeYears.options[nodeYears.selectedIndex].value;
+    console.log(years);
 
     // inputHasError contains true if values are not suitable
     var inputHasError = false;
 
+    // TODO alert
     // checks that principal contains a valid and positive number
     // parses it into float
     if (!isValidFloat(principal)) {
@@ -103,5 +119,6 @@ function compute() {
 ******************************************************************************/
 
 function loadBody() {
+    fillYears();
     updateSliderValue();
 }
