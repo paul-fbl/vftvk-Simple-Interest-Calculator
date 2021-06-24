@@ -65,6 +65,11 @@ function compute() {
             inputHasError = true;
         }
     }
+    if (inputHasError) {
+        window.alert("Please enter a positive number in amount.");
+        nodePrincipal.value = "";
+        nodePrincipal.focus();
+    }
 
     // checks that rate contains a valid and positive number
     // parses it into float
@@ -92,7 +97,7 @@ function compute() {
     
     // if the inputs contain error(s), create error message
     if(inputHasError) {
-        outputMessage = "<span class=\"output_error\">Please select valid parameters.</span>";
+        outputMessage = "<span class=\"output_error\">Please enter valid parameters.</span>";
     } else {
         // Compute the interest rate amount received
         // The amount is rounded to the nearest int for better readability

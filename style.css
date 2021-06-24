@@ -29,6 +29,13 @@ div.form_label {
 input.form_input {
     width: auto;
 }
+#rate_value {
+    display: inline-block;
+    width: 10%;
+}/*
+#rate_slider{
+    width: 45%;
+}*/
 h1 {
     color:rgb(82, 82, 82);
     font-weight: bold;
